@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           ),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: const KanbanBoardWidget(),
+            child: KanbanBoardWidget(),
           ),
         ),
       ),

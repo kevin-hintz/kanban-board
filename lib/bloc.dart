@@ -42,32 +42,36 @@ class KanbanBoardBloc extends Bloc<KanbanBoardEvent, KanbanBoardState> {
   KanbanBoardBloc()
       : super(KanbanBoardState(tasksByStatus: {
           TaskStatus.open: List.generate(
-            200,
+            5,
             (index) => Task(
-              id: '${index + 1}',
-              title: 'Task ${index + 1}',
-            ),
+                id: '${index + 1}',
+                title: 'Task ${index + 1}',
+                status: TaskStatus.open,
+                index: index),
           ),
           TaskStatus.inProgress: List.generate(
-            200,
+            5,
             (index) => Task(
-              id: '${index + 1 + 200}',
-              title: 'Task ${index + 1 + 200}',
-            ),
+                id: '${index + 1}',
+                title: 'Task ${index + 1 + 5}',
+                status: TaskStatus.inProgress,
+                index: index),
           ),
           TaskStatus.done: List.generate(
-            200,
+            5,
             (index) => Task(
-              id: '${index + 1 + 400}',
-              title: 'Task ${index + 1 + 400}',
-            ),
+                id: '${index + 1}',
+                title: 'Task ${index + 1 + 10}',
+                status: TaskStatus.done,
+                index: index),
           ),
           TaskStatus.onHold: List.generate(
-            200,
+            5,
             (index) => Task(
-              id: '${index + 1 + 600}',
-              title: 'Task ${index + 1 + 600}',
-            ),
+                id: '${index + 1}',
+                title: 'Task ${index + 1 + 15}',
+                status: TaskStatus.onHold,
+                index: index),
           ),
         })) {
     on<MoveTaskEvent>((event, emit) {
